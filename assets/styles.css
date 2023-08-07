@@ -1,0 +1,22 @@
+
+body {
+    margin: 0 auto;
+    width: 80%;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.line {
+    border: 1px solid black;
+}
+
+#city-search-form {
+    margin: 15px;
+}
