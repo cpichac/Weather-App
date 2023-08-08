@@ -3,11 +3,11 @@ let cityBtn = document.querySelector("#btn");
 let cardBox = document.querySelector("#card-holder");
 
 
-// cityBtn.addEventListener("click", function(event){
+// cityBtn.onclick = function (event) {
 
 // })
 
-cityBtn.onclick = function (event) {
+cityBtn.addEventListener("click", function(event){
     let inputEl = document.querySelector("#searched-city").value;
 
     event.preventDefault();
@@ -40,13 +40,17 @@ cityBtn.onclick = function (event) {
 
             let today = dayjs(eachDay[0].dt_txt).format("ddd MMM/DD/YYYY")
 
+            todayTemp.setAttribute("class", "text-detail");
+            todayDate.setAttribute("class", "text-detail");
+            todayName.setAttribute("class", "text-detail");
+
             todayName.textContent = inputEl;
             todayDate.textContent = "Date: " + today;
-            todayTemp.textContent = "Temp.: " + eachDay[0].main.temp;
+            todayTemp.textContent = "Temp: " + eachDay[0].main.temp;
 
             todayHolder.append(todayName);
             todayHolder.append(todayDate);
-            todayHolder.append(today.Temp);
+            todayHolder.append(todayTemp);
 
             for (let i = 0; i < 5; i++ ) {
                 //Creating the elements to make the weather cards
@@ -56,7 +60,7 @@ cityBtn.onclick = function (event) {
                 let temp = document.createElement("p");
                 let cityName = document.createElement("h3");
 
-                let date = dayjs(eachDay[i].dt_txt).format("ddd MMM/DD/YYYY");
+                let date = dayjs(eachDay[i].dt_txt).format("ddd hh:mm A");
 
 
                 //adding the values to the elements
@@ -85,11 +89,11 @@ cityBtn.onclick = function (event) {
             }
 
         })
-    }
+})
+
 
 // lastSearchedCity()
 
 // function lastSearchedCity() {
 
     
-// }
