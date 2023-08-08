@@ -31,8 +31,24 @@ cityBtn.onclick = function (event) {
             console.log(eachDay);
             console.log(eachDay[0]);
 
+            // let todayFormat = ;
 
-            for (let i = 0; i < 5; i+ 7 ) {
+            let todayName = document.createElement("h2");
+            let todayDate = document.createElement("p");
+            let todayTemp = document.createElement("p");
+            let todayHolder = document.querySelector("#todays-weather");
+
+            let today = dayjs(eachDay[0].dt_txt).format("ddd MMM/DD/YYYY")
+
+            todayName.textContent = inputEl;
+            todayDate.textContent = "Date: " + today;
+            todayTemp.textContent = "Temp.: " + eachDay[0].main.temp;
+
+            todayHolder.append(todayName);
+            todayHolder.append(todayDate);
+            todayHolder.append(today.Temp);
+
+            for (let i = 0; i < 5; i++ ) {
                 //Creating the elements to make the weather cards
                 let weatherCard = document.createElement("div");
                 let time = document.createElement("p");
