@@ -19,6 +19,22 @@ input {
     margin-bottom: 10px;
 }
 
+.weather-cards{
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 Auto;
+    
+}
+
+.weather-temp{
+    margin-left: 5px;
+}
+
+.text-detail {
+    text-align: center;
+}
+
 #block-display {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -37,6 +53,9 @@ input {
 
 #card-holder {
     margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px;
 }
 
 #city-search-form {
